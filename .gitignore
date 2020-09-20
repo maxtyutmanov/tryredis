@@ -350,3 +350,5 @@ MigrationBackup/
 .ionide/
 
 /redis-data
+
+.env.secrets

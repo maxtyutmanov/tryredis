@@ -2,7 +2,11 @@ version: "3.2"
 services:
   redis:
     image: redis
+    hostname: redis
     ports:
      - "6379:6379"
+    command: redis-server --requirepass '$REDIS_PASSWORD' --appendonly yes
     volumes:
-     - ./redis-data:/var/lib/redis
+     - ./redis-data:/data
+    environment:
+     - REDIS_PASSWORD
